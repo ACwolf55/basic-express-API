@@ -31,7 +31,6 @@ app.get('/',(req, res)=>{
 
 app.get('/cart',(req,res)=>{
 res.send(cart)
-console.log(cart)
 })
 
 app.post('/cart',(req,res)=>{
@@ -50,7 +49,6 @@ app.put('/cart/:item_id',(req,res)=>{
 
  const index = cart.findIndex((item)=>{
      return item.item_id == +item_id
-     console.log(item.item_id,item_id)
     })
 //  console.log(index)
 
@@ -66,7 +64,6 @@ app.delete('/cart/:item_id',(req,res)=>{
         console.log(item.item_id,item_id)
         return item.item_id == item_id
     })
-    console.log(index)
     if(index<0){
         res.status(409).send("No item in cart with that ID!")
     }
